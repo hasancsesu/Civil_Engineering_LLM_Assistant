@@ -31,7 +31,7 @@ The easiest way to replicate this training is to run the notebook directly in Co
 To run the model locally (requires GPU):
 
 # **Technical Challenges & Engineering Solutions**
-Building a domain-specific LLM on consumer-grade hardware involved significant MLOps hurdles. Below is a summary of the obstacles encountered and the strategic solutions applied:
+## Building a domain-specific LLM on consumer-grade hardware involved significant MLOps hurdles. Below is a summary of the obstacles encountered and the strategic solutions applied:
 ## Resource Management: Faced GPU unavailability on free tiers; resolved by transitioning to a paid Google Colab Compute architecture and optimizing session management to prevent idle disconnects.
 ## Environment Stability: Managed "dependency hell" involving bitsandbytes and transformers version mismatches. Resolved by standardizing on Transformers ≥ 4.40 and implementing a modular, restart-safe execution workflow.
 ## Quantization Constraints: Overcame ValueError regarding .to(device) calls on quantized models. Learned to rely exclusively on device_map="auto" for bitsandbytes-quantized weights, ensuring proper memory distribution across the T4 GPU.
