@@ -45,8 +45,8 @@ To run the model locally (requires GPU):
 | :--- | :--- | :--- |
 | **Response Tone** | Conversational and general | Technical, concise, and professional |
 | **Technical Accuracy** | High risk of hallucinating specific code values | Grounded in specific BS/EN engineering standards |
-| **Contextual Awareness** | General understanding of "walls" or "concrete" | Deep understanding of "Cantilever Retaining Walls" and mix designs |
-| **Format** | Standard paragraph responses | Instruction-based (Alpaca style) Q&A |
+| **Contextual Awareness** | General understanding of "project" or "engineer" | Deep understanding of "the role of an engineer in a construction project" if trained properly |
+| **Format** | Standard, simple response | More nuanced response, especially if that falls under properly trained topics |
 
 ```python
 from peft import PeftModel
