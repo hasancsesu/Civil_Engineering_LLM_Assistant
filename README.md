@@ -39,6 +39,15 @@ To run the model locally (requires GPU):
 ## Complexity Reduction: To isolate bugs introduced by QLoRA, I adopted a first-principles debugging approach: temporarily reverting to FP16 LoRA to verify the data pipeline before re-introducing 4-bit quantization.
 ## Workflow Optimization: Mitigated "Notebook Bloat" by adopting a modular phase-based workflow, ensuring each stage (Data $\to$ Loading $\to$ Training) was deterministic and documented.
 
+### Qualitative Comparison: Base vs. Fine-Tuned Model
+
+| Feature | Base Model (Mistral 7B) | Fine-Tuned Model (Civ-Eng) |
+| :--- | :--- | :--- |
+| **Response Tone** | Conversational and general | Technical, concise, and professional |
+| **Technical Accuracy** | High risk of hallucinating specific code values | Grounded in specific BS/EN engineering standards |
+| **Contextual Awareness** | General understanding of "walls" or "concrete" | Deep understanding of "Cantilever Retaining Walls" and mix designs |
+| **Format** | Standard paragraph responses | Instruction-based (Alpaca style) Q&A |
+
 ```python
 from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
